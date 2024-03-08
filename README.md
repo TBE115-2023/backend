@@ -2,7 +2,7 @@
 
 optional: You can use a docker config from my other repo for get up a dev environment and a database in mongo with a visual web app for the database
 link for docker files, docker and docker-compose should be installed:
-```https://github.com/lol955714/docker-files/tree/main/rest-server```
+```https://github.com/TBE115-2023/backend```
 
 put the files at the same level of the root dir for the template
 
