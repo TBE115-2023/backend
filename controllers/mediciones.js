@@ -16,7 +16,7 @@ const sensoresquery = async (req, res) => {
     } = req
     const limiteSuperior = (page)*elements;
     const limiteInferior = (page-1) * elements + 1
-const results  = await queryRun(`select * from TBE order by ${orderBy} desc limit ${limiteInferior},${limiteSuperior}`);
+const results  = await queryRun(`select * from Mediciones order by ${orderBy} desc limit ${limiteInferior},${limiteSuperior}`);
 res.json(
     results,
 );
