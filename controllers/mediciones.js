@@ -11,12 +11,16 @@ const sensoresquery = async (req, res) => {
         query:{
             page=1,
             elements=1000,
-            orderBy='id'
+            orderBy='id',
+            pagination='true',
+            single= 'false',
         }
     } = req
     const limiteSuperior = (page)*elements;
     const limiteInferior = (page-1) * elements + 1
-const results  = await queryRun(`select * from Mediciones order by ${orderBy} desc limit ${limiteInferior},${limiteSuperior}`);
+    // const paginationQuery = pagination === 'true'?  `limit ${limiteInferior},${limiteSuperior}` : 'limit 1' //con paginado
+    const paginationQuery = pagination === 'true'?  '' : 'limit 1'
+const results  = await queryRun(`select * from Mediciones order by ${orderBy} desc ${paginationQuery}`);
 res.json(
     results,
 );
